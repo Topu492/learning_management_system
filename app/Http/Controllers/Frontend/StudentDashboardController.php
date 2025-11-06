@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 
-class UserController extends Controller
+class StudentDashboardController extends Controller
 {
     function index() : View {
         
         
-        return view('dashboard');
+        return view('frontend.student-dashboard.index');
     }
 }
