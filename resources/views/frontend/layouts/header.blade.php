@@ -109,7 +109,7 @@
 
                    <li>
                    
-                       <a class="common_btn" href="">Sign in</a>
+                       <a class="common_btn" href="{{ route('login') }}">Sign in</a>
                   
                    
                         <a class="common_btn" href="">Dashboard</a>
