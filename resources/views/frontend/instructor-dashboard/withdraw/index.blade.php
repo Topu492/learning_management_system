@@ -2,7 +2,7 @@
 
 @section('content')
    
-    <section class="wsus__breadcrumb" style="background: url({{ asset(config('settings.site_breadcrumb')) }});">
+    <section class="wsus__breadcrumb" style="background: ">
         <div class="wsus__breadcrumb_overlay">
             <div class="container">
                 <div class="row">
@@ -30,7 +30,7 @@
                             <div class="wsus__dashboard_heading relative">
                                 <h5>Withdrawals</h5>
                                 <p>Manage your payouts here.</p>
-                                <a class="common_btn" href="{{ route('instructor.withdraw.request-payout') }}">+ Request Payout</a>
+                                <a class="common_btn" href="">+ Request Payout</a>
                             </div>
                         </div>
                        <table class="table">

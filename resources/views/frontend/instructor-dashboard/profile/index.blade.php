@@ -4,7 +4,7 @@
     <!--===========================
                     BREADCRUMB START
                 ============================-->
-    <section class="wsus__breadcrumb" style="background: url({{ asset(config('settings.site_breadcrumb')) }});">
+    <section class="wsus__breadcrumb" style="background">
         <div class="wsus__breadcrumb_overlay">
             <div class="container">
                 <div class="row">
@@ -45,7 +45,7 @@
 
 
 
-                        <form action="{{ route('instructor.profile.update') }}" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
                             @csrf
 
                             <div class="wsus__dashboard_profile wsus__dashboard_profile_avatar">
@@ -121,20 +121,17 @@
                            
                         </div>
 
-                        <form action="{{ route('instructor.profile.update-gateway-info') }}" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="wsus__dashboard_profile_update_info">
-                                        @foreach($gateways as $gateway)
-                                        <span class="d-none gateway-{{ $gateway->id }}">{!! $gateway->description !!}</span>
-                                        @endforeach
+                                     
+                                     
                                         <label>Gateway</label>
                                         <select name="gateway" id="" class="gateway">
                                             <option value="">Select</option>
-                                            @foreach($gateways as $gateway)
-                                            <option @selected(user()?->gatewayInfo?->gateway === $gateway->name) value="{{ $gateway->name }}" data-id="{{ $gateway->id }}">{{ $gateway->name }}</option>
-                                            @endforeach
+                                           
                                         </select>
                                         <x-input-error :messages="$errors->get('current_password')" class="mt-2" />
                                     </div>
@@ -171,7 +168,7 @@
 
                      
 
-                        <form action="{{ route('instructor.profile.update-password') }}" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -216,7 +213,7 @@
                             
                         </div>
 
-                        <form action="{{ route('instructor.profile.update-social') }}" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12">

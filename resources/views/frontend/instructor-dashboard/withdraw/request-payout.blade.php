@@ -4,7 +4,7 @@
     <!--===========================
                     BREADCRUMB START
                 ============================-->
-    <section class="wsus__breadcrumb" style="background: url({{ asset(config('settings.site_breadcrumb')) }});">
+    <section class="wsus__breadcrumb" style="background:">
         <div class="wsus__breadcrumb_overlay">
             <div class="container">
                 <div class="row">
@@ -38,20 +38,20 @@
                         <div class="col-xl-4 col-sm-6 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                             <div class="wsus__dash_earning">
                                 <h6>Current Ballance</h6>
-                                <h3>{{ config('settings.currency_icon') }} {{ $currentBallance }}</h3>
+                                <h3></h3>
                             </div>
                         </div>
                         <div class="col-xl-4 col-sm-6 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                             <div class="wsus__dash_earning">
                                 <h6>Peding Payout</h6>
-                                <h3>{{ config('settings.currency_icon') }} {{ $pendingBallance }}</h3>
+                                <h3></h3>
                                 
                             </div>
                         </div>
                         <div class="col-xl-4 col-sm-6 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                             <div class="wsus__dash_earning">
                                 <h6>Total Payout</h6>
-                                <h3>{{ config('settings.currency_icon') }} {{ $totalPayout }}</h3>
+                                <h3></h3>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                            
                         </div>
 
-                        <form action="{{ route('instructor.withdraw.request-payout.create') }}" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">
@@ -73,11 +73,11 @@
                                     <table class="table table-bordered">
                                         <tr>
                                             <td><b>Gateway</b></td>
-                                            <td>{{ user()?->gatewayInfo->gateway }}</td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td><b>Information</b></td>
-                                            <td>{!! user()?->gatewayInfo->information !!}</td>
+                                            <td></td>
                                         </tr>
                                     </table>
                                     <hr>

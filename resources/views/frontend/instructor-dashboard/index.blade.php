@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-    <section class="wsus__breadcrumb" style="background: url({{ asset(config('settings.site_breadcrumb')) }});">
+    <section class="wsus__breadcrumb" style="background">
         <div class="wsus__breadcrumb_overlay">
             <div class="container">
                 <div class="row">
@@ -25,7 +25,7 @@
                 @include('frontend.instructor-dashboard.sidebar')
                 <div class="col-xl-9 col-md-8">
 
-                    @if (auth()->user()->approve_status === 'pending')
+                   
                         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                             <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
                                 <path
@@ -51,31 +51,30 @@
                                 mail on your email when it will be approved.
                             </div>
                         </div>
-                    @endif
+                  
 
-                    @if (user()->role != 'instructor')
                         <div class="text-end">
-                            <a href="{{ route('student.become-instructor') }}" class="btn btn-primary">Become a
+                            <a href="" class="btn btn-primary">Become a
                                 Instructor</a>
                         </div>
-                    @endif
+              
                     <div class="row">
                         <div class="col-xl-4 col-sm-6 wow fadeInUp">
                             <div class="wsus__dash_earning">
                                 <h6>Pending Courses</h6>
-                                <h3>{{ $pendingCourses }}</h3>
+                                <h3></h3>
                             </div>
                         </div>
                         <div class="col-xl-4 col-sm-6 wow fadeInUp">
                             <div class="wsus__dash_earning">
                                 <h6>Approved Courses</h6>
-                                <h3>{{ $approvedCourses }}</h3>
+                                <h3></h3>
                             </div>
                         </div>
                         <div class="col-xl-4 col-sm-6 wow fadeInUp">
                             <div class="wsus__dash_earning">
                                 <h6>Rejected Courses</h6>
-                                <h3>{{ $rejectedCourses }}</h3>
+                                <h3></h3>
                             </div>
                         </div>
                     </div>
@@ -91,22 +90,12 @@
 
                             </thead>
                             <tbody>
-                                @forelse($orderItems as $orderItem)
-                                    <tr>
-                                        <td>{{ $orderItem->course->title }}</td>
-                                        <td>{{ $orderItem->order->customer->name }}</td>
-                                        <td>{{ $orderItem->price }}</td>
-                                        <td>{{ $orderItem->commission_rate ?? 0 }}%</td>
-                                        <td>{{ calculateCommission($orderItem->price, $orderItem->commission_rate) }}
-                                            {{ $orderItem->order->currency }}</td>
-
-                                    </tr>
-                                @empty
+                                
 
                                     <tr>
                                         <td>No Data Found</td>
                                     </tr>
-                                @endforelse
+                               
                             </tbody>
                         </table>
                     </div>
