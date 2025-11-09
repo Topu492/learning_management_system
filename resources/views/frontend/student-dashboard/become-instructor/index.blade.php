@@ -36,7 +36,7 @@
                 <div class="col-xl-9 col-md-8">
 
                     <div class="text-end">
-                        <a href="" class="common_btn">
+                        <a href="{{ route('student.dashboard') }}" class="common_btn">
                             Back
                         </a>
                     </div>
@@ -46,7 +46,7 @@
                             Become a Instructor
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('student.dashboard') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('student.become-instructor.update', auth()->user()->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Document</label>
