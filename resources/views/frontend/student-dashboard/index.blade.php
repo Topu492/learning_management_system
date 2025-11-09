@@ -34,9 +34,8 @@
             <div class="row">
                 @include('frontend.student-dashboard.sidebar')
                 <div class="col-xl-9 col-md-8">
-
-                   
-                        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                      @if (auth()->user()->approve_status === 'pending')
+                      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                             <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
@@ -61,10 +60,9 @@
                                 mail on your email when it will be approved.
                             </div>
                         </div>
-                
-
+                     @endif
                     <div class="text-end">
-                        <a href="" class="btn btn-primary">Become a Instructor</a>
+                        <a href="{{ route('student.become-instructor') }}" class="btn btn-primary">Become a Instructor</a>
                     </div>
                     <div class="row">
                         <div class="col-xl-4 col-sm-6 wow fadeInUp">

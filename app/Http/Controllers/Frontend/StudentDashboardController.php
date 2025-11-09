@@ -13,4 +13,11 @@ class StudentDashboardController extends Controller
         
         return view('frontend.student-dashboard.index');
     }
+
+     function becomeInstructor() : View {
+       if(auth()->user()->role == 'instructor') abort(403);
+
+       return view('frontend.student-dashboard.become-instructor.index'); 
+    }
+
 }
