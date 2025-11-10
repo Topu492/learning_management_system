@@ -25,7 +25,7 @@
                 @include('frontend.instructor-dashboard.sidebar')
                 <div class="col-xl-9 col-md-8">
 
-                   
+                     @if (auth()->user()->approve_status === 'pending')        
                         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                             <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
                                 <path
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                   
-
+                         @endif
                         <div class="text-end">
                             <a href="" class="btn btn-primary">Become a
                                 Instructor</a>

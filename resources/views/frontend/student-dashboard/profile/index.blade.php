@@ -4,7 +4,7 @@
     <!--===========================
                     BREADCRUMB START
                 ============================-->
-    <section class="wsus__breadcrumb" style="background: url({{ asset(config('settings.site_breadcrumb')) }});">
+    <section class="wsus__breadcrumb" style="background">
         <div class="wsus__breadcrumb_overlay">
             <div class="container">
                 <div class="row">
@@ -45,7 +45,7 @@
 
 
 
-                        <form action="{{ route('student.profile.update') }}" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
                             @csrf
 
                             <div class="wsus__dashboard_profile wsus__dashboard_profile_avatar">
@@ -122,7 +122,7 @@
 
                      
 
-                        <form action="{{ route('student.profile.update-password') }}" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -166,7 +166,7 @@
                             
                         </div>
 
-                        <form action="{{ route('student.profile.update-social') }}" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12">
