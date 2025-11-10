@@ -122,7 +122,7 @@
 
                      
 
-                        <form action="" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="{{ route('student.profile.update-password') }}" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -166,7 +166,7 @@
                             
                         </div>
 
-                        <form action="" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="{{ route('student.profile.update-social') }}" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12">

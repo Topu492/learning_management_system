@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\Frontend\PasswordUpdateRequest;
+use App\Http\Requests\Frontend\SocialUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +39,28 @@ class ProfileController extends Controller
 
        
 
+        return redirect()->back();
+    }
+
+    function updatePassword(PasswordUpdateRequest $request) : RedirectResponse {
+        $user = Auth::user();
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return redirect()->back();
+
+    }
+
+
+     function updateSocial(SocialUpdateRequest $request) : RedirectResponse {
+        $user = Auth::user();
+        $user->facebook = $request->facebook;
+        $user->x = $request->x;
+        $user->linkedin = $request->linkedin;
+        $user->website = $request->website;
+        $user->save();
+        
+        
         return redirect()->back();
     }
 }
