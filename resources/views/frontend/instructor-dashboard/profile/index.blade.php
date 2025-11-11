@@ -45,7 +45,7 @@
 
 
 
-                        <form action="" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
+                        <form action="{{ route('instructor.profile.update') }}" method="POST" class="wsus__dashboard_profile_update" enctype="multipart/form-data">
                             @csrf
 
                             <div class="wsus__dashboard_profile wsus__dashboard_profile_avatar">
@@ -140,7 +140,7 @@
                                 <div class="col-md-12">
                                     <div class="wsus__dashboard_profile_update_info">
                                         <label>Gateway Information</label>
-                                        <textarea name="information" id="" style="height: 300px" class="form-control gateway_description">{!! user()?->gatewayInfo?->information !!}</textarea>
+                                        <textarea name="information" id="" style="height: 300px" class="form-control gateway_description"></textarea>
                                         <x-input-error :messages="$errors->get('gateway_info')" class="mt-2" />
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
 
                      
 
-                        <form action="" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="{{ route('instructor.profile.update-password') }}" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -213,7 +213,7 @@
                             
                         </div>
 
-                        <form action="" method="POST" class="wsus__dashboard_profile_update">
+                        <form action="{{ route('instructor.profile.update-social') }}" method="POST" class="wsus__dashboard_profile_update">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12">
