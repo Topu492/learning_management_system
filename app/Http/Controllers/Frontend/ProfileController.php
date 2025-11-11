@@ -11,11 +11,13 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use App\Traits\FileUpload;
 
+
 use Illuminate\Http\RedirectResponse;
 
 class ProfileController extends Controller
 {
     use FileUpload;
+
 
     function index() : View {
        return view('frontend.student-dashboard.profile.index'); 
@@ -42,7 +44,7 @@ class ProfileController extends Controller
         $user->gender = $request->gender;
         $user->save();
 
-       
+       notyf()->success('Updated Successfully');
 
         return redirect()->back();
     }
