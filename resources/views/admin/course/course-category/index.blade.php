@@ -28,7 +28,7 @@
                             <tbody>
                                 @forelse ($categories as $category)
                                     <tr>
-                                        <td><img src="{{ asset($category->image) }}" alt=""></td>
+                                        <td><img src="{{ asset($category->image) }}" alt=""  width="100" height="80"></td>
                                         <td>{{ $category->name }}</td>
                                         <td>
                                             @if ($category->show_at_trending == 1)
@@ -45,16 +45,16 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.course-sub-categories.index', $category->id) }}"
+                                            <a href=""
                                                 class="btn-sm btn-warning text-warning">
                                                 <i class="ti ti-list"></i>
                                             </a>
-                                            <a href="{{ route('admin.course-categories.edit', $category->id) }}"
+                                            <a href=""
                                                 class="btn-sm btn-primary">
                                                 <i class="ti ti-edit"></i>
                                             </a>
                                             
-                                            <a href="{{ route('admin.course-categories.destroy', $category->id) }}"
+                                            <a href=""
                                                 class="text-red delete-item">
                                                 <i class="ti ti-trash-x"></i>
                                             </a>
