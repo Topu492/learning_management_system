@@ -243,7 +243,7 @@
 
                             </div>
                             <div class="dropdown-menu-column">
-                                <a class="dropdown-item">
+                                <a class="dropdown-item" href="{{ route('admin.course-categories.index') }}">
                                     Course Categories
                                 </a>
 
