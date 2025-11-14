@@ -99,8 +99,19 @@ class CourseCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+     public function destroy(CourseCategory $course_category)
     {
-        //
+        if(CourseCategory::where('parent_id', $course_category->id)->exists()) {
+            return response(['message' => 'Cannot delete a category with subcategory!'], 422);
+        }
+        try {
+            $this->deleteFile($course_category->image);
+            $course_category->delete();
+            notyf()->success('Deleted Successfully!');
+            return response(['message' => 'Deleted Successfully!'], 200);
+        }catch(Exception $e) {
+            logger("Course Language Error >> ".$e);
+            return response(['message' => 'Something went wrong!'], 500);
+        }
     }
 }

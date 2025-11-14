@@ -54,7 +54,7 @@
                                                 <i class="ti ti-edit"></i>
                                             </a>
                                             
-                                            <a href=""
+                                            <a href="{{ route('admin.course-categories.destroy', $category->id) }}"
                                                 class="text-red delete-item">
                                                 <i class="ti ti-trash-x"></i>
                                             </a>
