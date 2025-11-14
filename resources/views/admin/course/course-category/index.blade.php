@@ -49,7 +49,7 @@
                                                 class="btn-sm btn-warning text-warning">
                                                 <i class="ti ti-list"></i>
                                             </a>
-                                            <a href=""
+                                            <a href="{{ route('admin.course-categories.edit', $category->id) }}"
                                                 class="btn-sm btn-primary">
                                                 <i class="ti ti-edit"></i>
                                             </a>
