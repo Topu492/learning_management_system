@@ -45,7 +45,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href=""
+                                            <a href="{{ route('admin.course-sub-categories.index', $category->id) }}"
                                                 class="btn-sm btn-warning text-warning">
                                                 <i class="ti ti-list"></i>
                                             </a>

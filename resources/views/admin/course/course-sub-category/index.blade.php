@@ -52,10 +52,7 @@
                                                 <i class="ti ti-edit"></i>
                                             </a>
 
-                                            <a href="{{ route('admin.course-sub-categories.destroy', [
-                                                'course_category' => $course_category->id,
-                                                'course_sub_category' => $category->id,
-                                            ]) }}"
+                                            <a href=""
                                                 class="text-red delete-item">
                                                 <i class="ti ti-trash-x"></i>
                                             </a>
