@@ -15,4 +15,9 @@ class CourseController extends Controller
        //courses = Course::where('instructor_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('frontend.instructor-dashboard.course.index');
     }
+
+     function create(): View
+    {
+        return view('frontend.instructor-dashboard.course.create');
+    }
 }

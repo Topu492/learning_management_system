@@ -59,6 +59,9 @@ Route::group(['middleware' => ['auth:web', 'verified', 'check_role:instructor'],
    /** Course Routes */
  /** Course Routes */
    Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
+   Route::get('courses/create', [CourseController::class, 'create'])->name('courses.create');
+
+
 
 });
 
