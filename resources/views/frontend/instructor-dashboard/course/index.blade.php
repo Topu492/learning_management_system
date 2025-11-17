@@ -4,7 +4,7 @@
     <!--===========================
                         BREADCRUMB START
                     ============================-->
-    <section class="wsus__breadcrumb" style="background: url({{ asset(config('settings.site_breadcrumb')) }});">
+    <section class="wsus__breadcrumb" style="background">
         <div class="wsus__breadcrumb_overlay">
             <div class="container">
                 <div class="row">
@@ -40,7 +40,7 @@
                             <div class="wsus__dashboard_heading relative">
                                 <h5>Courses</h5>
                                 <p>Manage your courses and its update like live, draft and insight.</p>
-                                <a class="common_btn" href="{{ route('instructor.courses.create') }}">+ add course</a>
+                                <a class="common_btn" href="">+ add course</a>
                             </div>
                         </div>
 
@@ -82,45 +82,7 @@
                                                     </th>
                                                 </tr>
 
-                                                @foreach ($courses as $course)
-                                                    <tr>
-                                                        <td class="image">
-                                                            <div class="image_category">
-                                                                <img src="{{ asset($course->thumbnail) }}" alt="img"
-                                                                    class="img-fluid w-100">
-                                                            </div>
-                                                        </td>
-                                                        <td class="details">
-                                                            <p class="rating">
-                                                                @for ($i = 1; $i <= 5; $i++)
-                                                                    @if ($i <= $course->reviews()->avg('rating'))
-                                                                        <i class="fas fa-star"></i>
-                                                                    @else
-                                                                        <i class="far fa-star"></i>
-                                                                    @endif
-                                                                @endfor
-
-                                                                <span>({{ number_format($course->reviews()->avg('rating'), 2) ?? 0 }}
-                                                                    Rating)</span>
-                                                            </p>
-                                                            <a class="title" href="#">{{ $course->title }}</a>
-
-                                                        </td>
-                                                        <td class="sale">
-                                                            <p>{{ $course->enrollments()->count() }}</p>
-                                                        </td>
-                                                        <td class="status">
-                                                            <p class="active">Active</p>
-                                                        </td>
-                                                        <td class="action">
-                                                            <a class="edit"
-                                                                href="{{ route('instructor.courses.edit', ['id' => $course->id, 'step' => 1]) }}"><i
-                                                                    class="far fa-edit"></i></a>
-                                                            <a class="del" href="#"><i
-                                                                    class="fas fa-trash-alt"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
+                                               
                                             </tbody>
                                         </table>
                                     </div>
