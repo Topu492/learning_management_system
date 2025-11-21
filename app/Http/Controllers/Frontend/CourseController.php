@@ -8,6 +8,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Frontend\CourseBasicInfoCreateRequest;
 use App\Models\Course;
+use App\Models\CourseCategory;
+use App\Models\CourseLanguage;
+use App\Models\CourseLevel;
 use App\Traits\FileUpload;
 use Illuminate\Support\Facades\Session;
 use Str;
@@ -55,4 +58,39 @@ class CourseController extends Controller
             'redirect' => route('instructor.courses.edit', ['id' => $course->id, 'step' => $request->next_step])
         ]);
     } 
+
+
+            function edit(Request $request){
+
+
+        switch ($request->step) {
+            case '1':
+                $course = Course::findOrFail($request->id);
+                return view('frontend.instructor-dashboard.course.edit', compact('course'));
+                break;
+
+            case '2':
+                $categories = CourseCategory::where('status', 1)->get();
+                $levels = CourseLevel::all();
+                $languages = CourseLanguage::all();
+                $course = Course::findOrFail($request->id);
+                return view('frontend.instructor-dashboard.course.more-info', compact('categories', 'levels', 'languages', 'course'));
+                break;
+
+            case '3':
+                $courseId = $request->id;
+                $chapters = CourseChapter::where(['course_id' => $courseId, 'instructor_id' => Auth::user()->id])->orderBy('order')->get();
+                return view('frontend.instructor-dashboard.course.course-content', compact('courseId', 'chapters'));
+                break;
+
+            case '4':
+                $courseId = $request->id;
+                $course = Course::findOrFail($request->id);
+                $editMode = true;
+                return view('frontend.instructor-dashboard.course.finish', compact('course', 'editMode'));
+                break;
+}
+
+            }
+
 }

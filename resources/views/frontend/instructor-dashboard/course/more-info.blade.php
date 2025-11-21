@@ -36,54 +36,7 @@
                         
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="add_course_more_info_input">
-                        <label for="#">Category *</label>
-                        <select class="select_2" name="category">
-                            <option value=""> Please Select </option>
-                            @foreach($categories as $category)
-                                @if($category->subCategories->isNotEmpty())
-                                <optgroup label="{{ $category->name }}">
-                                   @foreach($category->subCategories as $subCategory) 
-                                        <option @selected($course?->category_id == $subCategory->id) value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
-                                   @endforeach
-                                </optgroup>
-                                @endif
-                            @endforeach
-                            
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="add_course_more_info_radio_box">
-                        <h3>Level</h3>
-                        @foreach($levels as $level)
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" @checked($level->id == $course->course_level_id) value="{{ $level->id }}" name="level" id="id-{{ $level->id }}">
-                            <label class="form-check-label" for="id-{{ $level->id }}">
-                                {{ $level->name }}
-                            </label>
-                        </div>
-                        @endforeach
-                        
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="add_course_more_info_radio_box">
-                        <h3>Language</h3>
-                        @foreach($languages as $language)
-                        <div class="form-check">
-                            <input class="form-check-input" @checked($language->id == $course->course_language_id) type="radio" name="language"
-                                value="{{ $language->id }}"
-                                id="id-{{ $language->id }}">
-                            <label class="form-check-label" for="id-{{ $language->id }}">
-                                {{ $language->name }}
-                            </label>
-                        </div>
-                        @endforeach
-
-                    </div>
-                </div>
+               
                 <div class="col-xl-12">
                     <button type="submit" class="common_btn">Save</button>
                 </div>
