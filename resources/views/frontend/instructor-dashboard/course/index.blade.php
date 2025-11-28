@@ -4,7 +4,7 @@
     <!--===========================
                         BREADCRUMB START
                     ============================-->
-    <section class="wsus__breadcrumb" style="background">
+    <section class="wsus__breadcrumb" style="background: url({{ asset(config('settings.site_breadcrumb')) }});">
         <div class="wsus__breadcrumb_overlay">
             <div class="container">
                 <div class="row">
@@ -82,7 +82,37 @@
                                                     </th>
                                                 </tr>
 
-                                               
+                                                @foreach ($courses as $course)
+                                                    <tr>
+                                                        <td class="image">
+                                                            <div class="image_category">
+                                                                <img src="{{ asset($course->thumbnail) }}" alt="img"
+                                                                    class="img-fluid w-100">
+                                                            </div>
+                                                        </td>
+                                                        <td class="details">
+                                                            <p class="rating">
+                                                              
+
+                                                                
+                                                            </p>
+                                                            <a class="title" href="#">{{ $course->title }}</a>
+
+                                                        </td>
+                                                        <td class="sale">
+                                                           
+                                                        </td>
+                                                        <td class="status">
+                                                            <p class="active">Active</p>
+                                                        </td>
+                                                        <td class="action">
+                                                            <a class="edit"  href="{{ route('instructor.courses.edit', ['id' => $course->id, 'step' => 1]) }}"><i
+                                                                    class="far fa-edit"></i></a>
+                                                            <a class="del" href="#"><i
+                                                                    class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

@@ -13,8 +13,7 @@
            </div>
            <div class="col-xxl-5 col-lg-7 d-none d-xxl-block">
                <div class="wsus__header_center">
-                   <p> <span></span> <a
-                           href="">/a></p>
+                   <p> <span></span> <a href=""> </a></p>
                </div>
            </div>
            <div class="col-xxl-3 col-lg-5 col-md-4">
